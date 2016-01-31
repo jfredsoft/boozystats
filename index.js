@@ -46,7 +46,7 @@ swaggerPath.get('/api-docs.json', function (req, res) {
         res.sendFile(__dirname + '/dist/api-docs.json');
 });
 swagger.configureSwaggerPaths('', 'api-docs', '');
-swagger.configure('http://localhost:8080', '1.0.0');
+swagger.configure(config.rootURL, '1.0.0');
 
 // Start the server
 app.listen(port);
