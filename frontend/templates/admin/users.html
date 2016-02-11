@@ -1,0 +1,138 @@
+<div id="bz-overlay" ng-show="load_activity.loading">
+    <img src="img/loader.gif" class="img-absolute-center vert-middle">
+</div>
+<div class="content table-responsive table-full-width">
+    <table class="table table-hover table-striped">
+        <thead>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Business</th>
+            <th>Enabled</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat = "user in arr_users track by user.id">
+                <td>{{user.id}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+                <td>
+                    <span ng-if="!((edit_activity.target_index==$index) && (edit_activity.editing))">{{dict_business[user.bussiness_code]}}</span>
+                    <div ng-if="(edit_activity.target_index==$index) && (edit_activity.editing)">
+                        <select ng-model="edit_activity.temp_obj.bussiness_code" class="form-control input-sm">
+                            <option value="" ng-selected = "'' == edit_activity.temp_obj.bussiness_code">None assigned</option>
+                            <option ng-repeat = "biz in arr_business track by biz.code" value="{{biz.code}}" ng-selected = "biz.code == edit_activity.temp_obj.bussiness_code">
+                                {{biz.name}}
+                            </option>
+                        </select>
+                    </div>
+                </td>
+                <td>
+                    <span ng-if="!((edit_activity.target_index==$index) && (edit_activity.editing))">{{user.is_enabled}}</span>
+                    <div ng-if="(edit_activity.target_index==$index) && (edit_activity.editing)">
+                        <select ng-model="edit_activity.temp_obj.is_enabled" class="form-control input-sm">
+                            <option value="true" ng-selected="edit_activity.temp_obj.is_enabled == 'true'">True</option>
+                            <option value="false" ng-selected="edit_activity.temp_obj.is_enabled == 'false'">False</option>
+                        </select>
+                    </div>
+                </td>
+                <td class="bz-table-actions">
+                    <div ng-if="!((edit_activity.target_index==$index) && (edit_activity.editing))">
+                        <a href="" ng-click="onStartEdit($index)"><i class="fa fa-edit"></i></a>
+                        <a href="" ng-click="onRemove($index)"><i class="fa fa-remove"></i></a>
+                    </div>
+                    <div ng-if="(edit_activity.target_index==$index) && (edit_activity.editing)">
+                        <a href="" ng-click="onFinishEdit(true)"><i class="fa fa-check"></i></a>
+                        <a href="" ng-click="onFinishEdit(false)"><i class="fa fa-remove"></i></a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<hr />
+<div>
+    <form ng-if="create_activity.editing" role="form" name="registerForm" novalidate  ng-submit="onCreate(true, registerForm.$valid)">
+        <div class="bz-new-form container-fluid">
+            <div class="row" ng-show="create_activity.invalid">
+                <div class="col-xs-12">
+                    <div class="alert alert-danger" role="alert">
+                        {{create_activity.msg}}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                
+                <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input class="form-control" type="text" name="username" ng-model="create_activity.temp_obj.username" placeholder="Username" required ng-minlength="3" ng-maxlength="12">
+                        <div class="help-block" ng-messages="registerForm.username.$error" ng-if="registerForm.username.$touched || validation_activity.invalid">
+                            <p ng-message="minlength">Username is too short.</p>
+                            <p ng-message="maxlength">Username is too long.</p>
+                            <p ng-message="required">Username is required.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input class="form-control"  name="email" type="email" ng-model="create_activity.temp_obj.email" placeholder="Email" required>
+                        <div class="help-block" ng-messages="registerForm.email.$error" ng-if="registerForm.email.$touched || validation_activity.invalid">
+                            <p ng-message="email">Please enter valid email.</p>
+                            <p ng-message="required">Email is required.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Business</label>
+                        <select ng-model="create_activity.temp_obj.bussiness_code" class="form-control">
+                                <option value="" ng-selected = "'' == create_activity.temp_obj.bussiness_code">None assigned</option>
+                                <option ng-repeat = "biz in arr_business track by biz.code" value="{{biz.code}}" ng-selected = "biz.code == create_activity.temp_obj.bussiness_code">
+                                    {{biz.name}}
+                                </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Enabled</label>
+                        <select ng-model="create_activity.temp_obj.is_enabled" class="form-control">
+                                <option value="true" ng-selected="create_activity.temp_obj.is_enabled == 'true'">True</option>
+                                <option value="false" ng-selected="create_activity.temp_obj.is_enabled == 'false'">False</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input class="form-control" name="password" type="password" ng-model="create_activity.temp_obj.password" placeholder="Password" required ng-minlength="6">
+                        <div class="help-block" ng-messages="registerForm.password.$error" ng-if="registerForm.password.$touched || validation_activity.invalid">
+                            <p ng-message="minlength">Password is too short.</p>
+                            <p ng-message="required">Password is required.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        <input class="form-control" type="password" ng-model="create_activity.temp_obj.confirm_password" placeholder="Confirm Password">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 text-right">
+                    <button class="btn btn-info btn-fill" type="submit">Create</button>
+                    <button class="btn btn-default btn-fill" type="button" ng-click="onCreate(false)">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <button class="btn btn-info btn-fill pull-right" type="button" ng-if="!create_activity.editing" ng-click="onCreateStart()">Add New</button>
+    <div class="clearfix"></div>
+</div>

@@ -9,3 +9,6 @@ module.exports.updateBiz = function(id, params, callback){
 module.exports.getBiz = function(params, callback){
 	bizModel.getBusiness(params, callback);
 }
+module.exports.removeBiz = function(id, callback){
+	bizModel.removeBusiness(id, callback);
+}

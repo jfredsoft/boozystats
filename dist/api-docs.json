@@ -187,13 +187,6 @@
 					"application/json"
 				],
 				"parameters": [
-					{			
-						"name": "x-access-token",
-						"in": "header",
-						"description": "Access token with admin privilege.",
-						"required": true,
-						"type": "string"
-					},
 					{
 						"name": "details",
 						"in": "body",

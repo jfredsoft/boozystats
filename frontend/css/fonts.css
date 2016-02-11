@@ -1,0 +1,21 @@
+/* font */
+.text-size--name{
+	font-size: 15px;
+	font-weight: bold;
+}
+.text-size--heading{
+	font-size: 30px;
+	font-weight: bold;
+}
+.text-size--paragraph{
+	font-size: 13px;
+}
+.text-size--small{
+	font-size: 11px;
+}
+.text-color--gray{
+	color: #999;
+}
+.text-color--black{
+	color: #000;
+}

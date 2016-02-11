@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Boozy Analysis Board</title>
+		<meta charset = "utf-8"/>
+		<link href="css/lib/bootstrap/bootstrap.min.css" type="text/css" rel="stylesheet">
+        <link href="css/lib/fontawesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+        <link href="css/global.css" type="text/css" rel="stylesheet">
+        <link href="css/layout.css" type="text/css" rel="stylesheet">
+        <link href="css/fonts.css" type="text/css" rel="stylesheet">
+        <link href="css/form-elements.css" type="text/css" rel="stylesheet">
+        <link href="css/pagewise/login.css" type="text/css" rel="stylesheet">
+
+        <script src="js/lib/jquery/jquery.min.js" type="text/javascript"></script>
+        <script src="js/lib/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+	</head>
+	<body ng-app="angLogin" ng-controller="loginCtrl">
+		<div class="bz-top-box">
+			BOOZY BACKYARD
+		</div>
+		<div class="form-box bz-login-box">
+        	<div class="form-top">
+        		<div class="form-top-left">
+        			<h3>Login to Boozy Analytics</h3>
+            		<p>Enter username and password to log on:</p>
+        		</div>
+        		<div class="form-top-right">
+        			<i class="fa fa-key"></i>
+        		</div>
+            </div>
+            <div class="form-bottom">
+                <div class="ss-error" ng-show="validation_activity.invalid">
+                    <div class="alert alert-danger" role="alert">
+                        {{validation_activity.msg}}
+                    </div>
+                </div>
+                <form role="form" name="loginForm" ng-submit="onLogin(loginForm.$valid)" class="login-form" novalidate>
+                	<div class="form-group">
+                		<label class="sr-only" for="form-email">Email</label>
+                    	<input type="email" name="email" placeholder="Email..." class="form-email form-control"  ng-model="info_obj.email" id="form-email" required>
+                        <div class="help-block" ng-messages="loginForm.email.$error" ng-if="loginForm.email.$touched || validation_activity.invalid">
+                            <p ng-message="email">Please enter valid email.</p>
+                            <p ng-message="required">Email is required.</p>
+                        </div>                        
+                    </div>
+                    <div class="form-group">
+                    	<label class="sr-only" for="form-password">Password</label>
+                    	<input type="password" name="password" placeholder="Password..." class="form-password form-control" ng-model="info_obj.password" id="form-password"  required>
+                        <div class="help-block" ng-messages="loginForm.password.$error" ng-if="loginForm.password.$touched || validation_activity.invalid">
+                            <p ng-message="required">Password is required.</p>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn {{submission_activity.submitting?'disabled':''}}">{{submission_activity.submitting?'LOGGING IN...':'LOG IN'}}</button>
+                </form>
+                <div class="bz-signup-block">
+                    Don't have an account? <a class="link" href="register.html">Sign up</a>
+                </div>
+            </div>
+        </div>
+	</body>
+    <script src="js/angular/angular.js"></script>
+    <script src="js/angular/angular-route/angular-route.js"></script>
+    <script src="js/angular/angular-resource/angular-resource.js"></script>
+    <script src="js/angular/angular-cookies/angular-cookies.js"></script>
+    <script src="js/angular/angular-messages.js"></script>
+
+    <script src="js/angular/pagewise/login/app.js"></script>
+    <script src="js/angular/pagewise/login/controller.js"></script>
+    <script src="js/angular/pagewise/model.js"></script>
+    <script src="js/angular/pagewise/service/session.js"></script>
+</html>

@@ -1,0 +1,1 @@
+module = angular.module('angDashboard', ['ngRoute', 'ngResource', 'ngCookies', 'ngMessages']);

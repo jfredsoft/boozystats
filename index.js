@@ -23,6 +23,8 @@ var router = express.Router();
 app.use(morgan('dev'));
 
 // Serve static files in dist folder
+
+app.use(express.static('frontend'));
 app.use(express.static('dist'));
 
 // All the routes will be prefixed with /api

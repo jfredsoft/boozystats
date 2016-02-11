@@ -1,0 +1,49 @@
+<div class="form-top">
+	<div class="form-top-left">
+		<h3>Sign up now</h3>
+		<p>Fill in the form below to get instant access:</p>
+	</div>
+	<div class="form-top-right">
+		<i class="fa fa-pencil"></i>
+	</div>
+</div>
+<div class="form-bottom">
+    <div class="ss-error" ng-show="validation_activity.invalid">
+        <div class="alert alert-danger" role="alert">
+            {{validation_activity.msg}}
+        </div>
+    </div>
+    <form role="form" name="registerForm" ng-submit="onSubmit(registerForm.$valid)" class="registration-form" novalidate>
+    	<div class="form-group">
+    		<label class="sr-only" for="form-username">Username</label>
+        	<input type="text" name="username" ng-model="info_obj.username" placeholder="Username..." class="form-first-name form-control" required ng-minlength="3" ng-maxlength="12">
+            <div class="help-block" ng-messages="registerForm.username.$error" ng-if="registerForm.username.$touched || validation_activity.invalid">
+                <p ng-message="minlength">Username is too short.</p>
+                <p ng-message="maxlength">Username is too long.</p>
+                <p ng-message="required">Username is required.</p>
+            </div>
+        </div>
+        <div class="form-group">
+        	<label class="sr-only" for="form-email">Email</label>
+        	<input type="email" name="email" ng-model="info_obj.email" placeholder="Email..." class="form-email form-control" required>
+            <div class="help-block" ng-messages="registerForm.email.$error" ng-if="registerForm.email.$touched || validation_activity.invalid">
+                <p ng-message="email">Please enter valid email.</p>
+                <p ng-message="required">Email is required.</p>
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+        	<label class="sr-only" for="form-password">Password</label>
+        	<input type="password" name="password" ng-model="info_obj.password" placeholder="Password..." class="form-email form-control" required ng-minlength="6">            
+        </div>
+        <div class="form-group">
+        	<label class="sr-only" for="form-password-confirm">Confirm Password</label>
+        	<input type="password" name="form-password-confirm" ng-model="info_obj.password_confirm" placeholder="Confirm Password..." class="form-email form-control">
+            <div class="help-block" ng-messages="registerForm.password.$error" ng-if="registerForm.password.$touched || validation_activity.invalid">
+                <p ng-message="minlength">Password is too short.</p>
+                <p ng-message="required">Password is required.</p>
+            </div>
+        </div>
+        <button type="submit" class="btn {{submission_activity.submitting?'disabled':''}}">{{submission_activity.submitting?'SIGNING UP...':'SIGN UP'}}</button>
+    </form>
+</div>

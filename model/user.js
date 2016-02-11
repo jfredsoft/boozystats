@@ -22,20 +22,19 @@ module.exports.addUser = function(params, callback){
           arr_values.push(params[column]);
         }
 
-        var query = client.query(formatter('INSERT INTO %I (%I) VALUES(%L)', tb_name, arr_columns, arr_values));
-        query.on('error', function(error){
-        	callback({
-        		status: 'error',
-        		data: error
-        	});
-          done();
-        });
-        query.on('end', function(result){
-        	callback({
-        		status: 'success',
-        		data: result.oid
-        	});
-          done();
+        var query = client.query(formatter('INSERT INTO %I (%I) VALUES(%L) RETURNING id', tb_name, arr_columns, arr_values), function(error, result){
+          if (error){
+            callback({
+              status: 'error',
+              data: error
+            });
+          }else{
+            console.log(result);
+            callback({
+              status: 'success',
+              data: result.rows[0].id
+            });
+          }
         });
 	});
 }
@@ -82,8 +81,8 @@ module.exports.updateUser = function(id, params, callback){
           arr_values.push(params[column]);
         }
         var query = client.query(formatter('UPDATE %I SET (%I)=(%L) WHERE id = %L', tb_name, arr_columns, arr_values, id));
-
         query.on('error', function(error){
+          console.log(error);
           callback({
             status: 'error',
             data: error

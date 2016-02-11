@@ -27,3 +27,6 @@ module.exports.getAllUsers = function(callback){
 module.exports.updateUser = function(id, params, callback){
 	userModel.updateUser(id, params, callback);
 }
+module.exports.removeUser = function(id, callback){
+	userModel.removeUser(id, callback);
+}
