@@ -38,6 +38,41 @@ module.exports.addAction = function(params, callback){
         });
 	});
 }
+module.exports.getActionsByPeriod = function(params, callback){
+  var sql = require('sql');
+  pg.connect(connString, function(err, client, done){
+        if (err){
+          done();
+          callback({
+            status: 'error',
+            data: err
+          });
+        }
+
+        var arr_actions = [];
+
+        var query = client.query(formatter('SELECT * FROM %I WHERE business_code=%L AND time>=%L AND time<=%L ORDER BY time ASC', tb_name, params.biz_code, params.start, params.end));
+        console.log(formatter('SELECT * FROM %I WHERE business_code=%L AND time>=%L AND time<=%L ORDER BY time ASC', tb_name, params.biz_code, params.start, params.end));
+
+        query.on('error', function(error){
+          callback({
+            status: 'error',
+            data: error
+          });
+          done();
+        });
+        query.on('row', function(row){
+          arr_actions.push(row);
+        });
+        query.on('end', function(result){
+          callback({
+            status: 'success',
+            data: arr_actions
+          });
+          done();
+        });
+  });
+}
 module.exports.getAction = function(params, callback){
   var sql = require('sql');
   pg.connect(connString, function(err, client, done){
@@ -81,5 +116,62 @@ module.exports.getAction = function(params, callback){
           });
           done();
         });
+  });
+}
+module.exports.getOverall = function(biz_code, callback){
+  var sql = require('sql');
+  pg.connect(connString, function(err, client, done){
+    if(err) {
+        done();
+        callback({
+          status: 'error',
+          data: err
+        });
+    }
+
+    var actiontable = sql.define({
+      name: tb_name,
+      columns: ['id', 'service', 'type', 'time', 'persona_id', 'business_code']
+    });
+
+    var data = {};
+    var query_views = client.query(formatter('SELECT COUNT(*) FROM %I WHERE business_code= %L AND type=%L', tb_name, biz_code, 'view'), function(err, result){
+      if (err){
+        callback({
+              status: 'error',
+              data: error
+            });
+        done();
+      }
+
+      console.log(result);
+      data.view = result.rows[0].count;
+      if (data.click != null && data.click != undefined){
+        callback({
+            status: 'success',
+            data: data
+          });
+        done();
+      }      
+    });
+    var query_clicks = client.query(formatter('SELECT COUNT(*) FROM %I WHERE business_code= %L AND type=%L', tb_name, biz_code, 'click'), function(err, result){
+      if (err){
+        callback({
+              status: 'error',
+              data: error
+            });
+        done();
+      }
+
+      console.log(result);
+      data.click = result.rows[0].count;
+      if (data.click != null && data.click != undefined){
+        callback({
+            status: 'success',
+            data: data
+          });
+        done();
+      }
+    });
   });
 }

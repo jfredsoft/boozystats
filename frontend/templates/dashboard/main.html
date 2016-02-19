@@ -1,0 +1,30 @@
+<div id="bz-overlay" ng-show="load_activity.loading" style="background-color: white">
+	<img src="img/loader.gif" class="img-absolute-center vert-middle">
+</div>
+<div class="content">
+	<div class="bz-business-info row">
+		<div class="col-xs-1">
+			<img src="img/logo.jpeg" class="img-absolute-center" width="100%">
+		</div>
+		<div class="col-xs-10">
+			<div class="c-name">{{globals.business_obj.name}}</div>
+			<div class="c-code">{{globals.business_obj.code}}</div>
+		</div>
+	</div>
+</div>
+<hr />
+<div>
+	<div class="bz-business-overall float-left">
+		{{globals.overall.counts.view}}
+		<div>views</div>
+	</div>
+	<div class="bz-business-overall float-left">
+		{{globals.overall.counts.click}}
+		<div>clicks</div>
+	</div>
+	<div class="bz-business-overall float-right">
+		{{globals.overall.counts.visit}}
+		<div>visits</div>
+	</div>
+	<div class="clearfix"></div>
+</div>

@@ -1,0 +1,29 @@
+<div id="bz-overlay" ng-show="data_activity.loading">
+	<img src="img/loader.gif" class="img-absolute-center vert-middle">
+</div>
+<div class="content">
+	<div class="row">
+		<div class="col-xs-12 col-sm-6">
+			<div class="bz-demo-chart-container">
+				<highchart config="config.gender"></highchart>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-6">
+			<div class="bz-demo-chart-container">
+				<highchart config="config.age"></highchart>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6">
+			<div class="bz-demo-chart-container">
+				<highchart config="config.location"></highchart>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-6">
+			<div class="bz-demo-chart-container">
+				<highchart config="config.education"></highchart>
+			</div>
+		</div>
+	</div>
+</div>

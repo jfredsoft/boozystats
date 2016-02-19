@@ -1,0 +1,1232 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"password",
+				"passwordConfig"
+			],
+			[
+				"passw",
+				"passwordRevealed"
+			],
+			[
+				"Area",
+				"Areastore"
+			],
+			[
+				"User",
+				"Userstore"
+			],
+			[
+				"ed",
+				"editing"
+			],
+			[
+				"busines",
+				"business_code"
+			],
+			[
+				"arr_",
+				"arr_users"
+			],
+			[
+				"edit",
+				"edit_activity"
+			],
+			[
+				"arr_bi",
+				"arr_business"
+			],
+			[
+				"load",
+				"load_activity"
+			],
+			[
+				"boxs",
+				"box-sizing"
+			],
+			[
+				"sub",
+				"submitting"
+			],
+			[
+				"submi",
+				"submission_activity"
+			],
+			[
+				"templ",
+				"templateUrl"
+			],
+			[
+				"backgou",
+				"background-image"
+			],
+			[
+				"ara",
+				"areaController"
+			],
+			[
+				"Busn",
+				"Businesses"
+			],
+			[
+				"Crede",
+				"credentials"
+			],
+			[
+				"swag",
+				"swaggerPath"
+			],
+			[
+				"swa",
+				"swaggerPath"
+			],
+			[
+				"action",
+				"actionModel"
+			],
+			[
+				"service",
+				"serviceController"
+			],
+			[
+				"token",
+				"tokenHandler"
+			],
+			[
+				"user",
+				"userController"
+			],
+			[
+				"busienss",
+				"business_table"
+			],
+			[
+				"body",
+				"bodyParser"
+			],
+			[
+				"Sele",
+				"onSelectMember"
+			],
+			[
+				"mem",
+				"member_id"
+			],
+			[
+				"consulta",
+				"consultant_obj"
+			],
+			[
+				"cli",
+				"client"
+			],
+			[
+				"time",
+				"timeMarker"
+			],
+			[
+				"end",
+				"endTime"
+			],
+			[
+				"shift",
+				"shiftPrevious"
+			],
+			[
+				"pan",
+				"schPanel"
+			],
+			[
+				"start",
+				"startTime"
+			],
+			[
+				"MeetMe",
+				"MeetMeEvent"
+			],
+			[
+				"filter",
+				"arr_filtered_users"
+			],
+			[
+				"initi",
+				"initial_load_count"
+			],
+			[
+				"arr",
+				"arr_filtered_orders"
+			],
+			[
+				"inser",
+				"inserted_id"
+			],
+			[
+				"tim",
+				"timezone"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Volumes/WORK/Web/Grapple/frontend/app/templates/components/reg/g-success.hbs",
+			"settings":
+			{
+				"buffer_size": 401,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Volumes/WORK/Web/Grapple/frontend/app/templates/components/reg/g-registration.hbs",
+			"settings":
+			{
+				"buffer_size": 2345,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Volumes/WORK/Web/Grapple/frontend/app/styles/components/reg/g-registration.less",
+			"settings":
+			{
+				"buffer_size": 490,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Volumes/WORK/Web/Grapple/frontend/ember-cli-build.js",
+			"settings":
+			{
+				"buffer_size": 1283,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Volumes/WORK/Web/Grapple/frontend/app/styles/_variables.less",
+			"settings":
+			{
+				"buffer_size": 198,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Volumes/WORK/Web/Grapple/frontend/app/components/reg/support/g-reg-notify.js",
+			"settings":
+			{
+				"buffer_size": 711,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Volumes/WORK/Web/Grapple/frontend/app/templates/components/reg/g-login.hbs",
+			"settings":
+			{
+				"buffer_size": 2018,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Volumes/WORK/Web/Grapple/frontend/app/styles/routes/reg.less",
+			"settings":
+			{
+				"buffer_size": 1974,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "(function() {\n				// trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim\n				if (!String.prototype.trim) {\n					(function() {\n						// Make sure we trim BOM and NBSP\n						var rtrim = /^[\\s\\uFEFF\\xA0]+|[\\s\\uFEFF\\xA0]+$/g;\n						String.prototype.trim = function() {\n							return this.replace(rtrim, '');\n						};\n					})();\n				}\n\n				[].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {\n					// in case the input is already filled..\n					if( inputEl.value.trim() !== '' ) {\n						classie.add( inputEl.parentNode, 'input--filled' );\n					}\n\n					// events:\n					inputEl.addEventListener( 'focus', onInputFocus );\n					inputEl.addEventListener( 'blur', onInputBlur );\n				} );\n\n				function onInputFocus( ev ) {\n					classie.add( ev.target.parentNode, 'input--filled' );\n				}\n\n				function onInputBlur( ev ) {\n					if( ev.target.value.trim() === '' ) {\n						classie.remove( ev.target.parentNode, 'input--filled' );\n					}\n				}\n			})();",
+			"file": "/Volumes/WORK/Web/Grapple/frontend/public/js/input-nao/input-nao.js",
+			"file_size": 1039,
+			"file_write_time": 130997680000000000,
+			"settings":
+			{
+				"buffer_size": 1039,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Volumes/WORK/Web/Grapple/frontend/app/styles/components/reg/support/g-reg-nao-input.less",
+			"settings":
+			{
+				"buffer_size": 2436,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Volumes/WORK/Web/Grapple/frontend/app/components/reg/g-login.js",
+			"settings":
+			{
+				"buffer_size": 1011,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Volumes/WORK/Web/Grapple/frontend/app/index.html",
+			"settings":
+			{
+				"buffer_size": 623,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Volumes/WORK/Web/Grapple/frontend/app/components/reg/g-registration.js",
+			"settings":
+			{
+				"buffer_size": 1283,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Volumes/WORK/Web/Grapple/frontend/app/templates/reg/register.hbs",
+			"settings":
+			{
+				"buffer_size": 49,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Volumes/WORK/Web/Grapple/frontend/app/router.js",
+			"settings":
+			{
+				"buffer_size": 488,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Volumes/WORK/Web/Grapple/frontend/app/templates/reg/success.hbs",
+			"settings":
+			{
+				"buffer_size": 35,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Volumes/WORK/Web/Grapple/frontend/app/routes/reg/success.js",
+			"settings":
+			{
+				"buffer_size": 118,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Volumes/WORK/Web/Grapple/frontend/app/routes/reg/register.js",
+			"settings":
+			{
+				"buffer_size": 164,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Volumes/WORK/Web/Grapple",
+		"/Volumes/WORK/Web/Grapple/frontend",
+		"/Volumes/WORK/Web/Grapple/frontend/app",
+		"/Volumes/WORK/Web/Grapple/frontend/public",
+		"/Volumes/WORK/Web/Grapple/frontend/public/images",
+		"/Volumes/WORK/Web/Grapple/frontend/vendor"
+	],
+	"file_history":
+	[
+		"/Volumes/WORK/Web/Grapple/frontend/node_modules/ember-cli-babel/Brocfile.js",
+		"/Volumes/WORK/Web/Grapple/frontend/app/components/app/g-editor.js",
+		"/Volumes/WORK/Web/Grapple/frontend/app/components/app/g-section-text.js",
+		"/Volumes/WORK/Web/Grapple/frontend/app/components/app/g-section.js",
+		"/Volumes/WORK/Web/Grapple/frontend/app/components/app/g-app.js",
+		"/Volumes/WORK/Web/Grapple/frontend/app/components/app/htmleditor/htmleditor.js",
+		"/Volumes/WORK/Web/Grapple/frontend/app/components/app/htmleditor/plugins/table.js",
+		"/Volumes/WORK/Web/Grapple/frontend/app/routes/reg/register.js",
+		"/Volumes/WORK/Web/Grapple/frontend/app/routes/reg/login.js",
+		"/Volumes/WORK/Web/Grapple/frontend/app/templates/reg.hbs",
+		"/Volumes/WORK/Web/Grapple/frontend/app/templates/components/reg/support/g-reg-notify.hbs",
+		"/Volumes/WORK/Web/Grapple/frontend/app/styles/components/reg/g-success.less",
+		"/Volumes/WORK/Web/Grapple/frontend/app/router.js",
+		"/Volumes/WORK/Web/Grapple/frontend/app/components/reg/support/g-reg-notify.js",
+		"/Volumes/WORK/Web/Grapple/frontend/app/styles/components/reg/support/g-reg-notify.less",
+		"/Volumes/WORK/Web/Grapple/frontend/app/templates/components/reg/g-registration.hbs",
+		"/Volumes/WORK/Web/Grapple/frontend/app/components/reg/support/g-ref-notify.js",
+		"/Volumes/WORK/Web/Grapple/frontend/app/services/commands/new-document-command.js",
+		"/Volumes/WORK/Web/Grapple/frontend/app/components/editor/grapple-document-editor.js",
+		"/Volumes/WORK/Web/Grapple/frontend/app/components/reg/objects/passwordconf.js",
+		"/Volumes/WORK/Web/Grapple/frontend/app/styles/components/reg/g-login.less",
+		"/Volumes/WORK/Web/Grapple/frontend/app/components/reg/g-login.js",
+		"/Volumes/WORK/Web/Grapple/frontend/app/services/command-registry.js",
+		"/Volumes/WORK/Web/Grapple/frontend/node_modules/ember-simple-auth/addon/services/session.js",
+		"/Volumes/WORK/Web/Grapple/frontend/dist/images/logo-main_icn@2x.png",
+		"/Volumes/WORK/Node/Boozy/Heroku/frontend/js/angular/pagewise/dashboard/app.js",
+		"/Volumes/WORK/Node/Boozy/Heroku/controller/business.js",
+		"/Volumes/WORK/Node/Boozy/Heroku/frontend/templates/admin/areas.html",
+		"/Volumes/WORK/Node/Boozy/Heroku/frontend/css/global.css",
+		"/Volumes/WORK/Web/Dynos/frontend/js/angular/pagewise/login/controller.js",
+		"/Volumes/WORK/Node/Boozy/Heroku/frontend/register.html",
+		"/Volumes/WORK/Node/Boozy/Heroku/frontend/templates/sign/register.html",
+		"/Volumes/WORK/Node/Boozy/Heroku/frontend/js/angular/pagewise/model.js",
+		"/Volumes/WORK/Node/Boozy/Heroku/lib/routes.js",
+		"/Volumes/WORK/Node/Boozy/Heroku/controller/user.js",
+		"/Volumes/WORK/Node/Boozy/Heroku/frontend/js/angular/pagewise/service/session.js",
+		"/Volumes/WORK/Node/Boozy/Heroku/model/user.js",
+		"/Volumes/WORK/Node/Boozy/Heroku/frontend/css/form-elements.css",
+		"/Volumes/WORK/Node/UI/x_fresh_bootstrap_table_v1.1/compact-table.html",
+		"/Volumes/WORK/Node/Boozy/Heroku/frontend/css/layout.css",
+		"/Volumes/WORK/Node/Boozy/Heroku/frontend/css/plugin/fresh-table/fresh-bootstrap-table.css",
+		"/Volumes/WORK/Node/Boozy/Heroku/frontend/templates/admin/business.html",
+		"/Volumes/WORK/Node/Boozy/Heroku/frontend/js/angular/pagewise/admin/service.js",
+		"/Volumes/WORK/Node/Boozy/Heroku/frontend/login.html",
+		"/Volumes/WORK/Node/Boozy/Heroku/frontend/js/angular/pagewise/admin/app.js",
+		"/Volumes/WORK/Node/Boozy/Heroku/frontend/js/angular/pagewise/register/app.js",
+		"/Volumes/WORK/Node/UI/x_lbd_free_v1.3/table.html",
+		"/Volumes/WORK/Node/Boozy/Heroku/frontend/js/angular/pagewise/admin/sections/businessController.js",
+		"/Volumes/WORK/Node/Boozy/Heroku/frontend/js/angular/pagewise/admin/sections/areaController.js",
+		"/Volumes/WORK/Node/Boozy/Heroku/frontend/js/angular/pagewise/admin/sections/userController.js",
+		"/Volumes/WORK/Node/UI/x_lbd_free_v1.3/icons.html",
+		"/Volumes/WORK/Node/Boozy/Heroku/frontend/js/angular/pagewise/admin/userController.js",
+		"/Volumes/WORK/Node/Boozy/Heroku/frontend/js/angular/pagewise/admin/areaController.js",
+		"/Volumes/WORK/Node/Boozy/Heroku/frontend/js/angular/pagewise/login/app.js",
+		"/Volumes/WORK/Node/Boozy/Heroku/frontend/js/angular/pagewise/register/controller.js",
+		"/Volumes/WORK/Web/Dynos/frontend/index.html",
+		"/Volumes/WORK/Node/Boozy/Heroku/frontend/templates/sign/success.html",
+		"/Volumes/WORK/Node/Boozy/Heroku/dist/api-docs.json",
+		"/Volumes/WORK/Node/Boozy/Heroku/frontend/css/pagewise/login.css",
+		"/Volumes/WORK/Node/Boozy/Heroku/frontend/templates/sign",
+		"/Volumes/WORK/Node/Boozy/Heroku/config.js",
+		"/Volumes/WORK/Node/UI/bootstrap-login-register-forms/form-3/index.html",
+		"/Volumes/WORK/Node/Boozy/Heroku/frontend/index.html",
+		"/Volumes/WORK/Node/Boozy/Heroku/frontend/js/angular/pagewise/login/controller.js",
+		"/Volumes/WORK/Node/Boozy/Heroku/frontend/img",
+		"/Volumes/WORK/Web/sigsense/SigSense/GIT/Source/Dev/user_panel/index.html",
+		"/Volumes/WORK/Node/Boozy/API/node_modules/swagger-ui/dist/index.html",
+		"/Volumes/WORK/Node/Boozy/API/node_modules/sql/test/dialects/where-clause-tests.js",
+		"/Volumes/WORK/Node/Boozy/API/package.json",
+		"/Volumes/WORK/Web/Protech/dev/MeetMe/app/controller/Root.js",
+		"/Volumes/WORK/Web/Protech/dev/GoodCal/app/controller/Root.js",
+		"/Volumes/WORK/Web/Protech/dev/MeetMe/app/view/consultant/Calendar.js",
+		"/Volumes/WORK/Web/Protech/dev/MeetMe/app/plugin/ScheduleEditor.js",
+		"/Volumes/WORK/Web/Protech/dev/MeetMe/app.js",
+		"/Volumes/WORK/Web/Protech/dev/MeetMe/app/Application.js",
+		"/Volumes/WORK/Web/Protech/dev/MeetMe/app.json",
+		"/Volumes/WORK/Web/Protech/bryntum/Bryntum-4.x-45d-trial/scheduler-4.0.2-trial/examples/eventeditor/DemoScheduler.js",
+		"/Volumes/WORK/Web/Protech/bryntum/scheduler-4.0.0-trial/examples/eventeditor/editor.js",
+		"/Volumes/WORK/Web/Protech/bryntum/scheduler-4.0.0-trial/examples/eventeditor/DemoEditor.js",
+		"/Volumes/WORK/Web/Protech/bryntum/scheduler-4.0.0-trial/examples/eventeditor/DemoScheduler.js",
+		"/Volumes/WORK/Web/Protech/dev/GoodCal/app/Application.js",
+		"/Volumes/WORK/Web/Protech/dev/GoodCal/app.js",
+		"/Volumes/WORK/Web/Infusion/Admin/templates/users/filter_form.html",
+		"/Volumes/WORK/iOS/Toptal/Backend/Toptal/protected/controllers/api.php",
+		"/Volumes/WORK/Web/Infusion/Admin/templates/orders/filter_status.html",
+		"/Volumes/WORK/Web/Infusion/api/protected/models/Role_model.php",
+		"/Volumes/WORK/Web/Infusion/api/protected/models/User_model.php",
+		"/Volumes/WORK/Web/Infusion/Admin/angular/pagewise/users/app.js",
+		"/Volumes/WORK/Web/Infusion/Admin/templates/orders/checkout_form.html",
+		"/Volumes/WORK/Web/Clinic/dev/patients.html",
+		"/Volumes/WORK/Web/Infusion/Admin/create_order.html",
+		"/Volumes/WORK/Web/Infusion/Admin/angular/pagewise/users/directive.js",
+		"/Volumes/WORK/Web/Infusion/Admin/angular/pagewise/users/controller.js",
+		"/Volumes/WORK/Web/Infusion/Admin/angular/pagewise/model.js",
+		"/Volumes/WORK/Web/Infusion/Admin/templates/nav.html",
+		"/Volumes/WORK/Web/Infusion/api/protected/controllers/order.php",
+		"/Volumes/WORK/Web/Infusion/Admin/angular/pagewise/create_order/directive.js",
+		"/Volumes/WORK/Web/Infusion/Admin/angular/pagewise/filter.js",
+		"/Volumes/WORK/Web/Infusion/Admin/templates/orders/from_date.html",
+		"/Volumes/WORK/Web/Infusion/Admin/templates/orders/filter_business.html",
+		"/Volumes/WORK/Web/Infusion/Admin/templates/orders/table.html",
+		"/Volumes/WORK/Web/Infusion/Admin/templates/orders/to_date.html",
+		"/Volumes/WORK/Web/Infusion/Admin/templates/orders/filter_city.html",
+		"/Volumes/WORK/Web/Infusion/Admin/templates/orders/price_range.html",
+		"/Volumes/WORK/Web/Infusion/Admin/angular/pagewise/directive.js",
+		"/Volumes/WORK/Web/Infusion/api/protected/controllers/city.php",
+		"/Volumes/WORK/Web/Infusion/api/protected/models/City_model.php",
+		"/Volumes/WORK/Web/Infusion/Admin/dist/css/pagewise/order.css",
+		"/Volumes/WORK/Web/Infusion/api/protected/models/Business_model.php",
+		"/Volumes/WORK/Web/Infusion/api/protected/models/Order_model.php",
+		"/Volumes/WORK/Web/Infusion/Admin/angular/pagewise/order/controller.js",
+		"/Volumes/WORK/Web/Infusion/Admin/templates/orders/order_table.html",
+		"/Volumes/WORK/Web/Infusion/Admin/angular/pagewise/order/directive.js",
+		"/Volumes/WORK/Web/Infusion/Admin/angular/pagewise/order/app.js",
+		"/Volumes/WORK/Web/Foodfast.me/admin/dist/css/pagewise/dashboard.css",
+		"/Volumes/WORK/Web/Foodfast.me/admin/dist/css/global.css",
+		"/Volumes/WORK/Web/Foodfast.me/admin/pages/forms/advanced.html",
+		"/Volumes/WORK/Web/Foodfast.me/admin/dashboard.html",
+		"/Volumes/WORK/Web/Foodfast.me/admin/index.html",
+		"/Volumes/WORK/Web/Foodfast.me/admin/index2.html",
+		"/Users/Developer/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Volumes/WORK/Toptal/Backend/Toptal/protected/core/MY_Model.php",
+		"/Volumes/WORK/Brent/CrushIt-master/app/controllers/users_controller.rb",
+		"/Volumes/WORK/Brent/Website/Crush.it/app/controllers/users_controller.rb"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Volumes/WORK/Web/Grapple/frontend"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Ember.Object.Extend",
+			"info_obj",
+			"business_code",
+			"var obj_cookie = $cookies.getObject('bz_session');",
+			"UP",
+			"format",
+			"		\n",
+			"2",
+			"confirmed: true,",
+			"setDate",
+			"11",
+			"update",
+			"like",
+			"	\n",
+			"</span>",
+			"function validate",
+			"IS NULL",
+			"_set_where",
+			"__get",
+			"validate"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Volumes/WORK/Web/Grapple/frontend/app/templates/components/reg/g-success.hbs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 401,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								394,
+								394
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 18,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Volumes/WORK/Web/Grapple/frontend/app/templates/components/reg/g-registration.hbs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2345,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Volumes/WORK/Web/Grapple/frontend/app/styles/components/reg/g-registration.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 490,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Volumes/WORK/Web/Grapple/frontend/ember-cli-build.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1283,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								796,
+								796
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 2.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/Volumes/WORK/Web/Grapple/frontend/app/styles/_variables.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 198,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								190,
+								176
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/Volumes/WORK/Web/Grapple/frontend/app/components/reg/support/g-reg-notify.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 711,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								188,
+								188
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/Volumes/WORK/Web/Grapple/frontend/app/templates/components/reg/g-login.hbs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2018,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 7,
+					"file": "/Volumes/WORK/Web/Grapple/frontend/app/styles/routes/reg.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1974,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 460.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"default_dir": "/Volumes/WORK/Web/Grapple/frontend/public/js/input-nao",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/Volumes/WORK/Web/Grapple/frontend/public/js/input-nao/input-nao.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1039,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								251,
+								251
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "/Volumes/WORK/Web/Grapple/frontend/app/styles/components/reg/support/g-reg-nao-input.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2436,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								847,
+								847
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 12.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "/Volumes/WORK/Web/Grapple/frontend/app/components/reg/g-login.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1011,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 35.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "/Volumes/WORK/Web/Grapple/frontend/app/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 623,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "/Volumes/WORK/Web/Grapple/frontend/app/components/reg/g-registration.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1283,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "/Volumes/WORK/Web/Grapple/frontend/app/templates/reg/register.hbs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 49,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								49,
+								49
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "/Volumes/WORK/Web/Grapple/frontend/app/router.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 488,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								453,
+								453
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "/Volumes/WORK/Web/Grapple/frontend/app/templates/reg/success.hbs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 35,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								35,
+								35
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "/Volumes/WORK/Web/Grapple/frontend/app/routes/reg/success.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 118,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								113,
+								113
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "/Volumes/WORK/Web/Grapple/frontend/app/routes/reg/register.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 164,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								63,
+								63
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			0.5,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "grapple.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"brocfile",
+				"frontend/node_modules/ember-cli-babel/Brocfile.js"
+			],
+			[
+				"session.js",
+				"frontend/node_modules/ember-simple-auth/addon/services/session.js"
+			],
+			[
+				"api-doc",
+				"dist/api-docs.json"
+			],
+			[
+				"distindex.h",
+				"dist/index.html"
+			],
+			[
+				"meetmecon",
+				"MeetMe/app/view/client/meetme/MeetMeController.js"
+			],
+			[
+				"base",
+				"app/controllers/api/v1/base_controller.rb"
+			],
+			[
+				"route",
+				"config/routes.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 294.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

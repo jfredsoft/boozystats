@@ -1,5 +1,7 @@
 module
 .controller('businessCtrl', function($scope, Business, Area, Bizstore, Areastore){
+	$scope.nav_activity.current_page_index = 2;
+
 	$scope.load_activity = {loading:false, count_to_load: 2};
 	$scope.edit_activity = {target_index: -1, temp_obj: {}, editing: false};
 	$scope.create_activity = {temp_obj:{}, editing: false, invalid:false, msg:""};
@@ -25,7 +27,7 @@ module
 		});
 	}
 	$scope.onStartEdit = function(index){
-		$scope.edit_activity.temp_obj = Object.assign($scope.arr_biz[index]);
+		$scope.edit_activity.temp_obj = Object.create($scope.arr_biz[index]);
 		if ($scope.edit_activity.temp_obj.area_id == '' || $scope.edit_activity.temp_obj.area_id == null)
 			$scope.edit_activity.temp_obj.area_id = '';
 		else
@@ -78,7 +80,7 @@ module
 			markLoading(true);
 			Business.save(post_params, function(success_obj){
 				post_params.id = success_obj.id;
-				Bizstore.pushBusiness(Object.assign(post_params));
+				Bizstore.pushBusiness(Object.create(post_params));
 				$scope.create_activity.editing = false;
 				markLoading(false);
 			}, function(fail_obj){

@@ -1,0 +1,33 @@
+<div id="bz-overlay" ng-show="data_activity.loading">
+	<img src="img/loader.gif" class="img-absolute-center vert-middle">
+</div>
+<div class="content">
+	<div class="bz-date-container">
+		<label class="c-date-label">From </label>
+		<div class="c-from float-left">			
+			<datepicker date-format="yyyy-MM-dd" date-set="{{date_activity.init_start_date}}">
+			   <input ng-model="date_activity.from" type="text" class="form-control"/>
+			</datepicker>
+		</div>
+		<label class="c-date-label">To </label>
+		<div class="c-to float-left">
+			<datepicker date-format="yyyy-MM-dd" date-set="2016-02-18">
+			   <input ng-model="date_activity.to" type="text" class="form-control"/>
+			</datepicker>
+		</div>
+		<div class="float-right">
+			<button class="btn btn-success" ng-click="generateStats()">Analyze</button>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<hr>
+	<div class="bz-widget-container" ng-if="chart_activity.data_ready">
+		<growth-widget class="c-widget" type="Total" dict="{{widget_activity.dict_total}}"></growth-widget>
+		<growth-widget class="c-widget" type="Change" dict="{{widget_activity.dict_change}}"></growth-widget>
+		<growth-widget class="c-widget c-percent" type="Growth" dict="{{widget_activity.dict_growth}}"></growth-widget>
+		<div class="clearfix"></div>
+	</div>
+	<div class="bz-chart-container">
+		<highchart id="bz-growth-chart" config="chart_activity.config" ng-if="chart_activity.data_ready"></highchart>
+	</div>
+</div>

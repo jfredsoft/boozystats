@@ -1,0 +1,91 @@
+.bz-widget-container{
+	box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 0 20px;
+    width: 500px;
+}
+.bz-widget-container .c-widget{
+	padding: 5px;
+	float: left;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	width: 150px;
+	margin-right : 15px;
+}
+.bz-widget-container .c-widget .c-title{
+	background-color: #eee;
+    color: #666;
+    font-size: 15px;
+    text-align: center;
+}
+.bz-widget-container .c-widget .c-numbers {
+	padding-top: 5px;
+}
+.bz-widget-container .c-widget .c-numbers .c-view {
+	line-height: 25px;
+	color: #35B955;
+}
+.bz-widget-container .c-widget .c-numbers .c-click {
+	line-height: 25px;
+	color: #C5862B;
+}
+.bz-widget-container .c-widget .c-numbers > div{
+	float: left;
+	text-align: center;
+	width: 50%;
+	font-size: 20px;
+	font-weight: bold;
+}
+.bz-widget-container .c-widget.c-percent .c-numbers > div{
+	font-size: 13px;
+}
+.bz-widget-container .c-widget .c-numbers > div > div{
+	font-size: 13px;
+	font-weight: normal;
+}
+
+
+.bz-date-container .c-date-label{
+	display: block;
+	float: left;
+	line-height: 35px;
+	margin-right: 5px;
+}
+.bz-date-container .c-from{
+	margin-right: 10px;
+}
+
+.bz-demo-chart-container{
+	margin-bottom: 50px;
+}
+.bz-demo-chart-container .highcharts-container{
+	border: 1px solid #eee;
+}
+.bz-demo-chart-container .highcharts-title{
+	text-transform:capitalize;
+}
+
+.bz-business-info .c-name{
+	font-size: 27px;
+	color: #666;
+}
+.bz-business-info .c-code{
+	font-size: 17px;
+	color: #999;
+}
+
+.bz-business-overall{
+	padding: 10px;
+	font-size: 25px;
+	font-weight: bold;
+	text-align: center;
+	width: 150px;
+	margin-bottom: 10px
+}
+.bz-business-overall:first-child{
+	border-right: 1px solid #ccc;
+}
+.bz-business-overall > div{
+	font-size: 15px;
+}

@@ -20,12 +20,18 @@ module
 			}
 		});
 	})
+	.factory('Action', function($resource, URL){
+		return $resource(URL.generateURL('/action/:biz_code/:start_unix/:end_unix'));
+	})
 	.factory('Business', function($resource, URL){
 		return $resource(URL.generateURL('/business/:biz_id'), {biz_id: '@id'}, {
 			update: {
 				method: 'PUT'
 			}
 		});
+	})
+	.factory('BusinessOverall', function($resource, URL){
+		return $resource(URL.generateURL('/business/:biz_code/overall'));	
 	})
 	.factory('Login', function($resource, URL){
 		return $resource(URL.generateURL('/authenticate'));

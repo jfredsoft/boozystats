@@ -118,11 +118,11 @@ module.exports.getBusiness = function(params, callback){
 		});
         var sql_query = business_table.select(business_table.star()).from(business_table).where([]);
         for (column in params){
-        	eval("sql_query = sql_query.and(business."+column+".equals('"+params[column]+"'));");
+        	eval("sql_query = sql_query.and(business_table."+column+".equals('"+params[column]+"'));");
         }
 
         console.log("Get query : " + sql_query.toQuery().text);
-        var query = client.query(sql_query.toQuery().text);
+        var query = client.query(sql_query.toQuery().text, sql_query.toQuery().values);
 
         query.on('error', function(error){
           callback({
